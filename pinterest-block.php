@@ -45,60 +45,6 @@ function pblock_add_admin_css_js() {
 	wp_enqueue_script( 'pinterest-block', plugins_url( '/js/pinterest-block-admin.js', __FILE__ ), array( 'jquery' ) );
 }
 
-//Add first-install pointer CSS/JS & functionality
-
-function pblock_add_admin_css_js_pointer() {
-	wp_enqueue_style( 'wp-pointer' );
-    wp_enqueue_script( 'wp-pointer' );
-	
-    add_action( 'admin_print_footer_scripts', 'pblock_admin_print_footer_scripts' );
-}
-
-add_action( 'admin_enqueue_scripts', 'pblock_add_admin_css_js_pointer' );
-
-//Add pointer popup message when plugin first installed
-
-function pblock_admin_print_footer_scripts() {
-    //Check option to hide pointer after initial display
-    if ( !get_option( 'pblock_hide_pointer' ) ) {
-        $pointer_content = '<h3>Pinterest Block Installed!</h3>';
-        $pointer_content .= '<p>Congratulations. You have just installed the Pinterest Block Plugin. ' .
-            'Now just configure your settings to specify what gets blocked.</p>';
-         
-        $url = admin_url( 'admin.php?page=' . PBLOCK_PLUGIN_BASENAME );
-        
-        ?>
-
-        <script type="text/javascript">
-            //<![CDATA[
-            jQuery(document).ready( function($) {
-                $("#menu-plugins").pointer({
-                    content: '<?php echo $pointer_content; ?>',
-                    buttons: function( event, t ) {
-                        button = $('<a id="pointer-close" class="button-secondary">Close</a>');
-                        button.bind("click.pointer", function() {
-                            t.element.pointer("close");
-                        });
-                        return button;
-                    },
-                    position: "left",
-                    close: function() { }
-            
-                }).pointer("open");
-              
-                $("#pointer-close").after('<a id="pointer-primary" class="button-primary" style="margin-right: 5px;" href="<?php echo $url; ?>">' + 
-                    'Pinterest Block Settings');
-            });
-            //]]>
-        </script>
-
-        <?php
-        
-        //Update option so this pointer is never seen again
-        update_option( 'pblock_hide_pointer', 1 );
-	}
-}
-
 //Register settings
 
 function pblock_register_settings() {
