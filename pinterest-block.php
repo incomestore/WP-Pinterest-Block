@@ -1,18 +1,25 @@
 <?php
-/*
-  Plugin Name: Pinterest Block
-  Plugin URI: http://pinterestplugin.com
-  Description: Block selected posts and pages categories from getting pinned on Pinterest.
-  Author: Phil Derksen
-  Author URI: http://pinterestplugin.com
-  Version: 1.0.1
-  License: GPLv2
-  Copyright 2012 Phil Derksen (phil@pinterestplugin.com)
-*/  
 
-/***************************
-* Global Constants
-***************************/
+/**
+ * Pinterest Block
+ *
+ * @package   PB
+ * @author    Phil Derksen <pderksen@gmail.com>
+ * @license   GPL-2.0+
+ * @link      http://pinplugins.com
+ * @copyright 2012-2015 Phil Derksen
+ *
+ * @wordpress-plugin
+ * Plugin Name: Pinterest Block
+ * Plugin URI: http://pinplugins.com/disable-pinning/
+ * Description: Block selected posts and pages from getting pinned on Pinterest.
+ * Version: 1.0.1
+ * Author: Phil Derksen
+ * Author URI: http://philderksen.com
+ * License: GPL-2.0+
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ * GitHub Plugin URI: https://github.com/pderksen/WP-Pinterest-Block
+ */
 
 define( 'PBLOCK_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 define( 'PBLOCK_META_TAG', '<meta name="pinterest" content="nopin" />' . "\n" );
