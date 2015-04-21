@@ -21,8 +21,18 @@
  * GitHub Plugin URI: https://github.com/pderksen/WP-Pinterest-Block
  */
 
-define( 'PBLOCK_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
-define( 'PBLOCK_META_TAG', '<meta name="pinterest" content="nopin" />' . "\n" );
+if ( ! defined( 'PBLOCK_PLUGIN_BASENAME' ) ) {
+	define( 'PBLOCK_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+}
+
+if ( ! defined( 'PBLOCK_META_TAG' ) ) {
+	define( 'PBLOCK_META_TAG', '<meta name="pinterest" content="nopin" />' . "\n" );
+}
+
+if ( ! defined( 'PINPLUGIN_BASE_URL' ) ) {
+	define( 'PINPLUGIN_BASE_URL', 'http://pinplugins.com/' );
+}
+
 
 $pblock_options = get_option( 'pblock_options' );
 	
@@ -60,7 +70,7 @@ function pblock_create_settings_page() {
 	?>
 	
     <div class="wrap">
-		<a href="http://pinterestplugin.com/" target="_blank"><div id="pinterest-button-icon-32" class="icon32"
+		<a href="<?php echo PINPLUGIN_BASE_URL ?>" target="_blank"><div id="pinterest-button-icon-32" class="icon32"
 			style="background: url(<?php echo plugins_url( '/img/pinterest-button-icon-med.png', __FILE__ ); ?>) no-repeat;"></div></a>
 		<h2><?php _e( 'Pinterest Block Settings', 'pblock' ); ?></h2>
 		
@@ -128,7 +138,7 @@ function pblock_create_settings_page() {
 										<td>
 											<p>
 												Pinterest Block simply disables pinning by inserting the official  
-												<a href="http://pinterestplugin.com/disable-pinning/" target="_blank">meta tag</a>.
+												<a href="<?php echo PINPLUGIN_BASE_URL ?>disable-pinning/" target="_blank">meta tag</a>.
 											</p>
 											</p>
 												Besides the types of pages above, <strong>any individual post or page</strong> can be blocked.
@@ -138,7 +148,7 @@ function pblock_create_settings_page() {
 											<p>
 												Note that the meta tag only blocks people from pinning using the official bookmarklet or "Add" feature
 												on Pinterest.com itself. <em>"Pin It" buttons on the page might still work.</em> Get the
-												<a href="http://pinterestplugin.com/pin-it-button/" target="_blank">"Pin It" Button plugin</a> 
+												<a href="<?php echo PINPLUGIN_BASE_URL ?>pin-it-button/" target="_blank">"Pin It" Button plugin</a>
 												to specify the posts and pages the button should or should not be shown on.
 											</p>
 										</td>
