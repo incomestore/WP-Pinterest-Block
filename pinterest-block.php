@@ -39,13 +39,6 @@ function pblock_install() {
 
 register_activation_hook( __FILE__, 'pblock_install' );
 
-//Debugging
-
-function pblock_debug_print( $value ) {
-    print_r( '<br/><br/>' );
-	print_r( $value );
-}
-
 //Add settings page to admin menu
 //Use $page variable to load CSS/JS ONLY for this plugin's admin page
 
