@@ -1,9 +1,9 @@
 === Pinterest Block ===
 Contributors: pderksen
 Tags: pinterest, pinterest block, social, block, protect
-Requires at least: 3.4.2
-Tested up to: 3.6.1
-Stable tag: 1.0.1
+Requires at least: 3.9.3
+Tested up to: 4.2
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,8 +58,14 @@ That's all there is to it!
 
 == Changelog ==
 
+= 1.0.2 - April 21, 2015 =
+
+* Tested up to WordPress 4.2.
+
 = 1.0.1 =
+
 * Misc bug fixes and performance improvements.
 
 = 1.0.0 =
+
 * Initial release.

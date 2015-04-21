@@ -13,7 +13,7 @@
  * Plugin Name: Pinterest Block
  * Plugin URI: http://pinplugins.com/disable-pinning/
  * Description: Block selected posts and pages from getting pinned on Pinterest.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Phil Derksen
  * Author URI: http://philderksen.com
  * License: GPL-2.0+
