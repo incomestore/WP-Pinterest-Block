@@ -26,19 +26,6 @@ define( 'PBLOCK_META_TAG', '<meta name="pinterest" content="nopin" />' . "\n" );
 
 $pblock_options = get_option( 'pblock_options' );
 	
-//Plugin install/activation
-
-function pblock_install() {
-	//Deactivate plugin if WP version too low
-    if ( version_compare( get_bloginfo( 'version' ), '3.0', '<' ) ) {
-        deactivate_plugins( basename( __FILE__ ) );
-    }
-    
-    //All settings values are off by default, so no need to initialize here
-}
-
-register_activation_hook( __FILE__, 'pblock_install' );
-
 //Add settings page to admin menu
 //Use $page variable to load CSS/JS ONLY for this plugin's admin page
 
