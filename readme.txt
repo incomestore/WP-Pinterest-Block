@@ -1,7 +1,7 @@
 === Pinterest Block ===
 Contributors: pderksen
 Tags: pinterest, pinterest block, social, block, protect
-Requires at least: 3.9.3
+Requires at least: 3.9
 Tested up to: 4.2
 Stable tag: 1.0.2
 License: GPLv2 or later
